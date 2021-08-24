@@ -12,7 +12,7 @@ import ru.gb.pool.ExplosionPool;
 
 public class MainShip extends Ship {
 
-    private static final int HP = 1;
+    private static final int HP = 100;
 
     private static final float HEIGHT = 0.15f;
     private static final float BOTTOM_MARGIN = 0.05f;
@@ -39,7 +39,7 @@ public class MainShip extends Ship {
         hp = HP;
     }
 
-    public void startNewGame(){
+    public void startNewGame() {
         hp = HP;
         pressedLeft = false;
         pressedRight = false;
@@ -154,9 +154,9 @@ public class MainShip extends Ship {
     public boolean isBulletCollision(Bullet bullet) {
         return !(
                 bullet.getRight() < getLeft()
-                || bullet.getLeft() > getRight()
-                || bullet.getBottom() > pos.y
-                || bullet.getTop() < getBottom()
+                        || bullet.getLeft() > getRight()
+                        || bullet.getBottom() > pos.y
+                        || bullet.getTop() < getBottom()
         );
     }
 
